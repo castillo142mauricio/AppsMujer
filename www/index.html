@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<link rel="stylesheet" href="css/ESTILOS.css">
+	<!-- <link rel="stylesheet" href="css/F.min.css"> -->
+	<link rel="stylesheet" href="css/c.min.css"> 
+	<link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="css/jquery.mobile.icons.min.css">
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+	<link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>APP DIA_MUJER</title>
+	<script type="text/javascript">
+			
+			//cambiar configuración
+			
+			año=2020;
+			mes=3;
+			dia=8;
+			hora=1;
+			minuto=0;
+			segundo=0;
+			urlsitio = 'http://www.App_Dia_De_La_Mujer.com/'; //url del sitio web final			
+
+			dateFuture = new Date(año, mes-1 , dia, hora, minuto, segundo);		
+			window.onload=function(){GetCount();}
+		
+		</script>
+		
+		
+		<style type="text/css">
+			
+			/*cambiar estilos*/
+			
+			#contenedor{
+				background:url(css/images/FRASES_1.jpg);
+				background-size: 100% 100%;
+				margin: 20px auto;
+				width: 100%;
+				text-align: center;
+			}
+			#textosuperior{
+				margin-top: 20px;
+				font-family: Arial;
+				font-size: 20px;
+				color: #f05152;
+			}
+			#countbox{
+				font-size: 30px;
+				font-family:Tahoma;
+				background: #f05152;
+				color: #fff;
+				padding: 10px 0;
+				margin: 20px auto 0;
+			}
+			#textoinferior{
+				font-size: 10px;
+				font-family: Arial;
+				margin-top: 20px;
+			}
+
+				
+			
+		</style>
+
+</head>
+<body>
+	<!-- pagina inicio -->
+		<div id="inicio" data-theme="c" data-role="page" data-tittle="inicio" > 
+				<div data-role="header">
+					<a href="#panel" data-role="button">Menú</a>
+					<h1>Dia De La Mujer</h1> 
+				</div>
+			<div data-role="content">
+						<!-- panel de control -->
+
+						<div data-role="panel" data-display="overlay" id="panel" data-position="left">
+							<h3>Menú</h3>
+							<ul data-role="listview">
+							<li><a href="#inicio">Inicio</a></li>
+							
+							<li><a href="#diadelamujer">Dia De La Mujer</a></li>
+							<li><a href="#regalos">Regalos</a></li>
+							
+							
+							</ul>
+							<a href="#inicio" data-rel="close" data-role="button">Cerrar</a>
+						</div>
+						<!-- final panel de control -->
+				<p>	Feliz día de la mujer trabajadora</p>
+				<hr>
+				<a data-role="button" href="#contactanos" data-rel="dialog">Contactanos</a>
+				<img width="100%" src="css/images/FONDO INICIO.jpg">	
+			</div>
+
+
+			<div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a data-transition="slidedown" data-icon="shop" href="#regalos">Regalos</a></li>
+						<li><a data-transition="slidedown" data-icon="calendar" href="#diadelamujer">Dia De La Mujer</a></li>
+						
+						<li><a data-transition="slidedown" data-icon="heart" href="#inicio">Inicio</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+    <!-- fin pagina de inicio -->
+	
+	<!-- dia de la mujer -->
+			<div id="diadelamujer" data-theme="c" data-role="page" data-tittle="diadelamujer" > 
+					<div data-role="header">
+						<a href="#panel" data-role="button">Menú</a>
+						<h1>Dia De La Mujer</h1> 
+					</div>
+
+				<!-- cuenta regresiva -->
+				<div data-role="content">
+
+
+				<div id="contenedor">
+					<!--cambiar ruta logo-->
+					<img src="css/images/logo cuenta regresiva.png" />			
+					
+					<!--cambiar texto-->
+					<div id="textosuperior">
+						FALTAN
+					</div>
+
+					<div id="countbox"></div>
+
+					<!--cambiar texto-->
+					<div id="textoinferior">
+						Para decelebrarle lo mejor a las mejores
+					</div>
+					
+				</div>
+			
+			
+				<script type="text/javascript">
+				// Codigo de http://countdown.onlineclock.net/
+				function GetCount(){
+				
+				        dateNow = new Date();                                             
+				        amount = dateFuture.getTime() - dateNow.getTime();                
+				        delete dateNow;
+				
+				        if(amount < 0){
+								location.href=urlsitio;
+				        }
+				        else{
+				                days=0;hours=0;mins=0;secs=0;out="";
+				
+				                amount = Math.floor(amount/1000);
+				
+				                days=Math.floor(amount/86400);
+				                amount=amount%86400;
+				
+				                hours=Math.floor(amount/3600);
+				                amount=amount%3600;
+				
+				                mins=Math.floor(amount/60);
+				                amount=amount%60;
+				
+				                secs=Math.floor(amount);
+				
+				                if(days != 0){out += days +" dia"+((days!=1)?"s":"")+", ";}
+				                if(days != 0 || hours != 0){out += hours +" hora"+((hours!=1)?"s":"")+", ";}
+				                if(days != 0 || hours != 0 || mins != 0){out += mins +" minuto"+((mins!=1)?"s":"")+", ";}
+				                out += secs +" segundos";
+				                document.getElementById('countbox').innerHTML=out;
+				
+				                setTimeout("GetCount()", 1000);
+				        }
+				}
+				</script>
+
+			</div>
+
+					<!-- fin cuenta regresiva -->
+
+					<!-- panel de control -->
+
+							<div data-role="panel" data-display="overlay" id="panel" data-position="left">
+								<h3>Menú</h3>
+								<ul data-role="listview">
+								<li><a href="#inicio">Inicio</a></li>
+								
+								<li><a href="#diadelamujer">Dia De La Mujer</a></li>
+								<li><a href="#regalos">Regalos</a></li>
+								
+								
+								</ul>
+								<a href="#inicio" data-rel="close" data-role="button">Cerrar</a>
+							</div>
+							<!-- final panel de control -->
+
+			<div data-role="footer" data-position="fixed">
+					<div data-role="navbar">
+						<ul>
+							<li><a data-transition="slidedown" data-icon="shop" href="#regalos">Regalos</a></li>
+							<li><a data-transition="slidedown" data-icon="calendar" href="#diadelamujer">Dia De La Mujer</a></li>
+							
+							<li><a data-transition="slidedown" data-icon="heart" href="#inicio">Inicio</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+	<!-- fin dia de la mujer -->
+
+	<!-- inicio regalos -->
+
+		<div id="regalos" data-theme="c" data-role="page" data-tittle="regalos" > 
+				<div data-role="header">
+					<a href="#panel" data-role="button">Menú</a>
+					<h1>Regalos</h1> 
+				</div>
+			<div data-role="content">
+						<!-- panel de control -->
+
+						<div data-role="panel" data-display="overlay" id="panel" data-position="left">
+							<h3>Menú</h3>
+							<ul data-role="listview">
+							<li><a href="#inicio">Inicio</a></li>
+							
+							<li><a href="#diadelamujer">Dia De La Mujer</a></li>
+							<li><a href="#regalos">Regalos</a></li>
+							
+							
+							</ul>
+							<a href="#inicio" data-rel="close" data-role="button">Cerrar</a>
+						</div>
+						<!-- final panel de control -->
+		<div class="caja"></div>
+
+				
+					
+			</div>
+
+
+			<div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a data-transition="slidedown" data-icon="shop" href="#regalos">Regalos</a></li>
+						<li><a data-transition="slidedown" data-icon="calendar" href="#diadelamujer">Dia De La Mujer</a></li>
+						
+						<li><a data-transition="slidedown" data-icon="heart" href="#inicio">Inicio</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	<!-- fin regalos -->
+	
+    	
+
+
+
+   <!-- contacto inicio -->
+
+			<div data-role="page" id="contactanos" data-title="contactanos">
+				<div data-role="header">
+					<h1>contactanos</h1>
+				</div>
+				<div data-role="content">
+					<form action="#" method="post">
+						Nombre:
+						<input type="text">
+						Correo:
+						<input type="text">
+						Comentario
+						<textarea  cols="30" rows="10"></textarea>
+						<input type="submit" value="Enviar">
+
+					</form>
+				</div>
+				<div data-role="footer">
+					<p> Cel:. 3203633069, Cra98 #2a-60</p>
+				</div>
+			</div>
+	<!-- contacto final -->
+
+	<!-- Llamando los scripsts -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+	<!-- Finalizando llamado de los scripts -->
+
+
+</body>
+</html>

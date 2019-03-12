@@ -1,0 +1,27 @@
+@keyframes slider {
+	0%{ background:url("images/foto 1.jpg"); background-size:cover;}
+	20%{ background:url("images/foto 2.jpg"); background-size:cover;}
+	40%{ background:url("images/foto 3.jpg"); background-size:cover;}
+	60%{ background:url("images/foto 4.jpg"); background-size:cover;}
+	100%{ background:url("images/foto 5.jpg"); background-size:cover;}
+}
+html,body{
+	height:100%;
+}
+body{
+	background:linear-gradient(black, white);
+
+}
+.caja{
+
+	box-shadow: 0.3em 0.3em 0.3em rgba(0,0,0,0.5);
+	/*border-radius: 50%;*/
+	animation:slider alternate infinite 25s;
+	
+	background-size:100% 100%;
+	border: solid;
+	width: 100%;
+	min-width: 100%;
+	margin:0 auto;
+	height:500px;
+}
